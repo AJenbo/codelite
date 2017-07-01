@@ -112,6 +112,7 @@ protected:
     wxPGProperty* m_pgPropPHPCsFixerEmptyReturn;
     wxPGProperty* m_pgPropPHPCsFixerConcatSpace;
     wxPGProperty* m_pgPropPHPCsFixerRules;
+    wxPGProperty* m_pgPropPHPCsSimpleBool;
     wxPanel* m_splitterPage1731328;
     wxStyledTextCtrl* m_textCtrlPreview_PhpCSFixer;
     wxPanel* m_panelPhpcbf;

@@ -95,37 +95,12 @@ enum PHPFixserFormatterSettings {
 
 enum PHPFixserFormatterStyle {
     kPcfAllowRisky = (1 << 0),
-    kPcfPHP56Migration = (1 << 1),
-    kPcfPHP70Migration = (1 << 2),
-    kPcfPHP71Migration = (1 << 3),
-    kPcfPSR1 = (1 << 4),
-    kPcfPSR2 = (1 << 5),
-    kPcfSymfony = (1 << 6),
-    kPcfShortArray = (1 << 7),
-    kPcfLongArray = (1 << 8),
-    kPcfAlignDoubleArrow = (1 << 9),
-    kPcfStripDoubleArrow = (1 << 10),
-    kPcfIgnoreDoubleArrow = (1 << 16),
-    kPcfAlignEquals = (1 << 11),
-    kPcfStripEquals = (1 << 12),
-    kPcfIgnoreEquals = (1 << 17),
-    kPcfBlankLineAfterNamespace = (1 << 13),
-    kPcfBlankLineAfterOpeningTag = (1 << 14),
-    kPcfBlankLineBeforeReturn = (1 << 15),
-    kPcfConcatSpaceNone = (1 << 18),
-    kPcfConcatSpaceOne = (1 << 19),
-    kPcfEmptyReturnStrip = (1 << 20),
-    kPcfEmptyReturnKeep = (1 << 21),
-    kPcfCombineConsecutiveUnsets = (1 << 22),
-    kPcfLinebreakAfterOpeningTag = (1 << 23),
-    kPcfMbStrFunctions = (1 << 24),
-    kPcfNoBlankLinesBeforeNamespace = (1 << 25),
-    kPcfNoMultilineWhitespaceBeforeSemicolons = (1 << 26),
-    kPcfNoNullPropertyInitialization = (1 << 27),
-    kPcfNoPhp4Constructor = (1 << 28),
-    kPcfNoShortEchoTag = (1 << 29),
-    kPcfNoUnreachableDefaultArgumentValue = (1 << 30),
-    kPcfNoUselessElse = (1 << 31),
+};
+
+enum PHPFixserBinaryOperator {
+    kPcfNull = (1 << 0),
+    kPcfFalse = (1 << 1),
+    kPcfTrue = (1 << 2),
 };
 
 enum PhpbcfFormatterStyle {

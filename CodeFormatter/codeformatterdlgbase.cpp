@@ -576,10 +576,6 @@ CodeFormatterBaseDlg::CodeFormatterBaseDlg(wxWindow* parent, wxWindowID id, cons
     m_pgMgrPHPCsFixerArr.Add(_("PSR1"));
     m_pgMgrPHPCsFixerArr.Add(_("PSR2"));
     m_pgMgrPHPCsFixerArr.Add(_("Symfony"));
-    m_pgMgrPHPCsFixerIntArr.Add(0);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfPSR1);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfPSR2);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfSymfony);
     m_pgPropPHPCsFixerStandard = m_pgMgrPHPCsFixer->AppendIn( m_pgPropPhpCSFixer,  new wxEnumProperty( _("Standard"), wxPG_LABEL, m_pgMgrPHPCsFixerArr, m_pgMgrPHPCsFixerIntArr, 0) );
     m_pgPropPHPCsFixerStandard->SetHelpString(_("Coding standard."));
     
@@ -589,10 +585,6 @@ CodeFormatterBaseDlg::CodeFormatterBaseDlg(wxWindow* parent, wxWindowID id, cons
     m_pgMgrPHPCsFixerArr.Add(_("PHP 5.6"));
     m_pgMgrPHPCsFixerArr.Add(_("PHP 7.0"));
     m_pgMgrPHPCsFixerArr.Add(_("PHP 7.1"));
-    m_pgMgrPHPCsFixerIntArr.Add(0);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfPHP56Migration);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfPHP70Migration);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfPHP71Migration);
     m_pgPropPHPCsFixerMigration = m_pgMgrPHPCsFixer->AppendIn( m_pgPropPhpCSFixer,  new wxEnumProperty( _("Migration"), wxPG_LABEL, m_pgMgrPHPCsFixerArr, m_pgMgrPHPCsFixerIntArr, 0) );
     m_pgPropPHPCsFixerMigration->SetHelpString(_("Migrate old code to use features by newer versions of php."));
     
@@ -603,9 +595,9 @@ CodeFormatterBaseDlg::CodeFormatterBaseDlg(wxWindow* parent, wxWindowID id, cons
     m_pgMgrPHPCsFixerArr.Add(_("Strip"));
     m_pgMgrPHPCsFixerArr.Add(_("Ignore"));
     m_pgMgrPHPCsFixerIntArr.Add(0);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfAlignDoubleArrow);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfStripDoubleArrow);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfIgnoreDoubleArrow);
+    m_pgMgrPHPCsFixerIntArr.Add(kPcfNull);
+    m_pgMgrPHPCsFixerIntArr.Add(kPcfFalse);
+    m_pgMgrPHPCsFixerIntArr.Add(kPcfTrue);
     m_pgPropPHPCsFixerDoubleArrows = m_pgMgrPHPCsFixer->AppendIn( m_pgPropPhpCSFixer,  new wxEnumProperty( _("Double arrows"), wxPG_LABEL, m_pgMgrPHPCsFixerArr, m_pgMgrPHPCsFixerIntArr, 0) );
     m_pgPropPHPCsFixerDoubleArrows->SetHelpString(_("Double arrows alignment"));
     
@@ -616,9 +608,9 @@ CodeFormatterBaseDlg::CodeFormatterBaseDlg(wxWindow* parent, wxWindowID id, cons
     m_pgMgrPHPCsFixerArr.Add(_("Strip"));
     m_pgMgrPHPCsFixerArr.Add(_("Ignore"));
     m_pgMgrPHPCsFixerIntArr.Add(0);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfAlignEquals);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfStripEquals);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfIgnoreEquals);
+    m_pgMgrPHPCsFixerIntArr.Add(kPcfNull);
+    m_pgMgrPHPCsFixerIntArr.Add(kPcfFalse);
+    m_pgMgrPHPCsFixerIntArr.Add(kPcfTrue);
     m_pgPropPHPCsFixerEquals = m_pgMgrPHPCsFixer->AppendIn( m_pgPropPhpCSFixer,  new wxEnumProperty( _("Equals"), wxPG_LABEL, m_pgMgrPHPCsFixerArr, m_pgMgrPHPCsFixerIntArr, 0) );
     m_pgPropPHPCsFixerEquals->SetHelpString(_("Equals alignment"));
     
@@ -627,9 +619,6 @@ CodeFormatterBaseDlg::CodeFormatterBaseDlg(wxWindow* parent, wxWindowID id, cons
     m_pgMgrPHPCsFixerArr.Add(_("Default"));
     m_pgMgrPHPCsFixerArr.Add(_("Short"));
     m_pgMgrPHPCsFixerArr.Add(_("Long"));
-    m_pgMgrPHPCsFixerIntArr.Add(0);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfShortArray);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfLongArray);
     m_pgPropPHPCsFixerArrays = m_pgMgrPHPCsFixer->AppendIn( m_pgPropPhpCSFixer,  new wxEnumProperty( _("Arrays"), wxPG_LABEL, m_pgMgrPHPCsFixerArr, m_pgMgrPHPCsFixerIntArr, 0) );
     m_pgPropPHPCsFixerArrays->SetHelpString(_("Array style"));
     
@@ -639,8 +628,8 @@ CodeFormatterBaseDlg::CodeFormatterBaseDlg(wxWindow* parent, wxWindowID id, cons
     m_pgMgrPHPCsFixerArr.Add(_("Strip"));
     m_pgMgrPHPCsFixerArr.Add(_("Keep"));
     m_pgMgrPHPCsFixerIntArr.Add(0);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfEmptyReturnStrip);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfEmptyReturnKeep);
+    m_pgMgrPHPCsFixerIntArr.Add(kPcfTrue);
+    m_pgMgrPHPCsFixerIntArr.Add(kPcfFalse);
     m_pgPropPHPCsFixerEmptyReturn = m_pgMgrPHPCsFixer->AppendIn( m_pgPropPhpCSFixer,  new wxEnumProperty( _("Empty return"), wxPG_LABEL, m_pgMgrPHPCsFixerArr, m_pgMgrPHPCsFixerIntArr, 0) );
     m_pgPropPHPCsFixerEmptyReturn->SetHelpString(_("Remove @return void|null from phpdoc."));
     
@@ -649,44 +638,60 @@ CodeFormatterBaseDlg::CodeFormatterBaseDlg(wxWindow* parent, wxWindowID id, cons
     m_pgMgrPHPCsFixerArr.Add(_("Default"));
     m_pgMgrPHPCsFixerArr.Add(_("None"));
     m_pgMgrPHPCsFixerArr.Add(_("One"));
-    m_pgMgrPHPCsFixerIntArr.Add(0);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfConcatSpaceNone);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfConcatSpaceOne);
     m_pgPropPHPCsFixerConcatSpace = m_pgMgrPHPCsFixer->AppendIn( m_pgPropPhpCSFixer,  new wxEnumProperty( _("Concat space"), wxPG_LABEL, m_pgMgrPHPCsFixerArr, m_pgMgrPHPCsFixerIntArr, 0) );
     m_pgPropPHPCsFixerConcatSpace->SetHelpString(_("Spacing around concatination dots."));
     
     m_pgMgrPHPCsFixerArr.Clear();
     m_pgMgrPHPCsFixerIntArr.Clear();
     m_pgMgrPHPCsFixerArr.Add(_("Allow risky"));
-    m_pgMgrPHPCsFixerArr.Add(_("Blank line after namespace"));
-    m_pgMgrPHPCsFixerArr.Add(_("Blank line after opening tag"));
-    m_pgMgrPHPCsFixerArr.Add(_("Blank line before return"));
+    m_pgMgrPHPCsFixerIntArr.Add(kPcfAllowRisky);
+    m_pgPropPHPCsFixerRules = m_pgMgrPHPCsFixer->AppendIn( m_pgPropPhpCSFixer,  new wxFlagsProperty( _("Rules"), wxPG_LABEL, m_pgMgrPHPCsFixerArr, m_pgMgrPHPCsFixerIntArr, 0) );
+    m_pgPropPHPCsFixerRules->SetHelpString(wxT(""));
+    
+    m_pgMgrPHPCsFixerArr.Clear();
+    m_pgMgrPHPCsFixerIntArr.Clear();
+    m_pgMgrPHPCsFixerArr.Add(_("Remove ::class keyword"));
+    m_pgMgrPHPCsFixerArr.Add(_("Heredoc to nowdoc"));
     m_pgMgrPHPCsFixerArr.Add(_("Combine consecutive unsets"));
     m_pgMgrPHPCsFixerArr.Add(_("Linebreak after opening tag"));
-    m_pgMgrPHPCsFixerArr.Add(_("Use mb_str functions"));
+    m_pgMgrPHPCsFixerArr.Add(_("str to mb_str functions"));
     m_pgMgrPHPCsFixerArr.Add(_("No blank lines before namespace"));
     m_pgMgrPHPCsFixerArr.Add(_("No multiline whitespace before semicolons"));
-    m_pgMgrPHPCsFixerArr.Add(_("No null property initialization"));
-    m_pgMgrPHPCsFixerArr.Add(_("No PHP 4 constructor"));
+    m_pgMgrPHPCsFixerArr.Add(_("Mo PHP 4 constructors"));
     m_pgMgrPHPCsFixerArr.Add(_("No short echo tag"));
     m_pgMgrPHPCsFixerArr.Add(_("No unreachable default argument value"));
     m_pgMgrPHPCsFixerArr.Add(_("No useless else"));
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfAllowRisky);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfBlankLineAfterNamespace);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfBlankLineAfterOpeningTag);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfBlankLineBeforeReturn);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfCombineConsecutiveUnsets);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfLinebreakAfterOpeningTag);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfMbStrFunctions);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfNoBlankLinesBeforeNamespace);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfNoMultilineWhitespaceBeforeSemicolons);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfNoNullPropertyInitialization);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfNoPhp4Constructor);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfNoShortEchoTag);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfNoUnreachableDefaultArgumentValue);
-    m_pgMgrPHPCsFixerIntArr.Add(kPcfNoUselessElse);
-    m_pgPropPHPCsFixerRules = m_pgMgrPHPCsFixer->AppendIn( m_pgPropPhpCSFixer,  new wxFlagsProperty( _("Rules"), wxPG_LABEL, m_pgMgrPHPCsFixerArr, m_pgMgrPHPCsFixerIntArr, 0) );
-    m_pgPropPHPCsFixerRules->SetHelpString(wxT(""));
+    m_pgMgrPHPCsFixerArr.Add(_("No useless return"));
+    m_pgMgrPHPCsFixerArr.Add(_("Not operator with space"));
+    m_pgMgrPHPCsFixerArr.Add(_("Not operator with successor space"));
+    m_pgMgrPHPCsFixerArr.Add(_("Phpunit test class requires covers"));
+    m_pgMgrPHPCsFixerArr.Add(_("Order phpdoc"));
+    m_pgMgrPHPCsFixerArr.Add(_("Semicolon after instruction"));
+    m_pgMgrPHPCsFixerArr.Add(_("Simplified null return"));
+    m_pgMgrPHPCsFixerArr.Add(_("Strict comparison"));
+    m_pgMgrPHPCsFixerArr.Add(_("Strict param"));
+    m_pgMgrPHPCsFixerIntArr.Add(class_keyword_remove);
+    m_pgMgrPHPCsFixerIntArr.Add(heredoc_to_nowdoc);
+    m_pgMgrPHPCsFixerIntArr.Add(combine_consecutive_unsets);
+    m_pgMgrPHPCsFixerIntArr.Add(linebreak_after_opening_tag);
+    m_pgMgrPHPCsFixerIntArr.Add(mb_str_functions);
+    m_pgMgrPHPCsFixerIntArr.Add(no_blank_lines_before_namespace);
+    m_pgMgrPHPCsFixerIntArr.Add(no_multiline_whitespace_before_semicolons);
+    m_pgMgrPHPCsFixerIntArr.Add(no_php4_constructor);
+    m_pgMgrPHPCsFixerIntArr.Add(no_short_echo_tag);
+    m_pgMgrPHPCsFixerIntArr.Add(no_unreachable_default_argument_value);
+    m_pgMgrPHPCsFixerIntArr.Add(no_useless_else);
+    m_pgMgrPHPCsFixerIntArr.Add(no_useless_return);
+    m_pgMgrPHPCsFixerIntArr.Add(not_operator_with_space);
+    m_pgMgrPHPCsFixerIntArr.Add(not_operator_with_successor_space);
+    m_pgMgrPHPCsFixerIntArr.Add(php_unit_test_class_requires_covers);
+    m_pgMgrPHPCsFixerIntArr.Add(phpdoc_order);
+    m_pgMgrPHPCsFixerIntArr.Add(semicolon_after_instruction);
+    m_pgMgrPHPCsFixerIntArr.Add(simplified_null_return);
+    m_pgMgrPHPCsFixerIntArr.Add(strict_comparison);
+    m_pgMgrPHPCsFixerIntArr.Add(strict_param);
+    m_pgPropPHPCsSimpleBool = m_pgMgrPHPCsFixer->AppendIn( m_pgPropPhpCSFixer,  new wxFlagsProperty( _("Options"), wxPG_LABEL, m_pgMgrPHPCsFixerArr, m_pgMgrPHPCsFixerIntArr, 0) );
+    m_pgPropPHPCsSimpleBool->SetHelpString(wxT(""));
     
     m_splitterPage1731328 = new wxPanel(m_splitter165318, wxID_ANY, wxDefaultPosition, wxDLG_UNIT(m_splitter165318, wxSize(-1,-1)), wxTAB_TRAVERSAL);
     m_splitter165318->SplitVertically(m_splitterPage169419, m_splitterPage1731328, 0);
