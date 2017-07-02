@@ -2,6 +2,7 @@
 What is [CodeLite][2]?
 ====
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0e153d5affa2414bb7f6b21a07c6760d)](https://www.codacy.com/app/AJenbo/codelite?utm_source=github.com&utm_medium=referral&utm_content=AJenbo/codelite&utm_campaign=badger)
 [![Join the chat at https://gitter.im/eranif/codelite](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/eranif/codelite?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 [CodeLite][3] is an open source, free, cross platform IDE for the C/C++ programming languages which runs on all major Platforms ( OSX, Windows and Linux )
